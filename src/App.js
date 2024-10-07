@@ -48,6 +48,28 @@ const App = () => {
     }
 
   }
+  const handleMultiplicationNumbers = ()=>{
+    if (firstNumber === '0') {
+      setFirstNumber(String(currentNumber));
+      setCurrentNumber('0')
+      setOperation('*')
+    }else{
+      const sum = Number(firstNumber) * Number(currentNumber);
+      setCurrentNumber(String(sum))
+      setOperation('')
+    }
+  }
+  const handleDivisionNumbers = () =>{
+    if (firstNumber === '0') {
+      setFirstNumber(String(currentNumber));
+      setCurrentNumber('0')
+      setOperation('/')
+    }else{
+      const sum = Number(firstNumber) / Number(currentNumber);
+      setCurrentNumber(String(sum))
+      setOperation('')
+    }
+  }
 
   const handleEquals = () => {
 
@@ -61,6 +83,14 @@ const App = () => {
             break;
           default: 
             break;
+          case '*':
+            handleMultiplicationNumbers();
+            break;
+          case '/':
+            handleDivisionNumbers();
+          break;
+          
+             
         }
     }
 
